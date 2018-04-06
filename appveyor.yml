@@ -1,30 +1,21 @@
-# Notes:
-#   - Minimal appveyor.yml file is an empty file. All sections are optional.
-#   - Indent each level of configuration with 2 spaces. Do not use tabs!
-#   - All section names are case-sensitive.
-#   - Section names should be unique on each level.
+# Test against the latest version of this Node.js version
+environment:
+  nodejs_version: "8"
 
-#---------------------------------#
-#      general configuration      #
-#---------------------------------#
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - npm install
 
-# version format
-version: 1.0.{build}
-
-
-#---------------------------------#
-#       build configuration       #
-#---------------------------------#
-
-# build platform, i.e. x86, x64, Any CPU. This setting is optional.
-platform: Any CPU
-build_script:
-  # by default, all script lines are interpreted as batch
-  - cmd: npm install
-
-#---------------------------------#
-#       tests configuration       #
-#---------------------------------#
-
+# Post-install test scripts.
 test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
   - npm test
+
+# Don't actually build.
+build: off
