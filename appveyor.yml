@@ -19,10 +19,6 @@ version: 1.0.{build}
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
 
-platform:
-  - x86
-  - Any CPU
-
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
