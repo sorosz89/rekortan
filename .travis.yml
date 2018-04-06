@@ -8,3 +8,5 @@ notifications:
   email: false
 os: 
 - linux
+addons:
+  firefox: "latest"
