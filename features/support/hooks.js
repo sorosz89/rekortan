@@ -13,7 +13,8 @@ global.by = webdriver.By;
 module.exports = () => {
     this.setDefaultTimeout(60000);
     this.registerHandler('BeforeFeatures', () => 
-      return new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
+        global.driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
+        return global.driver.manage().window().maximize();
     });
 
     this.registerHandler('AfterFeatures', () => global.driver.quit());
