@@ -15,7 +15,7 @@ So that I can apply for a game
     And the 18:30 vege time is selected
     And the name Lovasi Andras is entered
     And the elerhetőseg lovasi.andras@gmail.com is entered
-    And the tevekenysseg is clicked
-    And the Lábtengó is selected
+#   And the tevekenysseg is clicked
+#   And the Lábtengó is selected
 
   
