@@ -9,4 +9,4 @@ notifications:
 os: 
 - linux
 addons:
-  firefox: "latest"
+  chrome: "latest"
