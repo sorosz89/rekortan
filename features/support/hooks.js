@@ -10,12 +10,15 @@ global.expect = chai.expect;
 var webdriver = require('selenium-webdriver');
 global.by = webdriver.By;
 
-module.exports = () => {
+module.exports = function(){
     this.setDefaultTimeout(60000);
-    this.registerHandler('BeforeFeatures', () => 
+    this.registerHandler('BeforeFeatures', function(){
         global.driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
         return global.driver.manage().window().maximize();
     });
 
-    this.registerHandler('AfterFeatures', () => global.driver.quit());
+    this.registerHandler('AfterFeatures', function(){
+        return global.driver.quit();
+    });
 };
+
