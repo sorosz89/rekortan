@@ -1,12 +1,14 @@
 
 language: node_js
+dist: trusty
 node_js:
 - 6
 script:
-- npm test
+- xvfb-run npm test
 notifications:
   email: false
 os: 
 - linux
 addons:
-  chrome: "latest"
+  chrome: "stable"
+ 
